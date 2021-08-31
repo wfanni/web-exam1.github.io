@@ -1,0 +1,151 @@
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color:#ece6db;
+}
+
+#menu {
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    width: 75px;
+    height: 75px;
+    border: none;
+    border-radius: 50vh;
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
+
+    cursor: pointer;
+
+    div {
+        background-color: #fff;
+        width: 40px;
+        height: 5px;
+    }
+
+    &.open {
+        #upper {
+            transform: rotate(45deg) translate(5px, 4px);
+        }
+        #middle {
+            display: none;
+        }
+        #lower {
+            transform: rotate(-45deg) translate(5px, -5px);
+
+        }
+    }
+
+}
+
+#navlist {
+    position: absolute;
+    top: 15vh;
+    right: 2vh;
+    width: 150px;
+    height: 300px;
+    display: none;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #837761;
+    border-radius: 1em;
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    li {
+        font-family: Montserrat, sans-serif;
+        color: #ece6db;
+        font-size: 1.3em;
+        transition: color 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            color: #ffffff;
+        }
+
+    }
+
+    &.open {
+        display: flex;
+    }
+
+}
+
+#container {
+    width: 75%;
+    margin: 2vh 0 0 15vh;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .texts {
+        h2 {
+            font-weight: 400;
+            font-size: 1.5em;
+        }
+        span {
+            font-family: Montserrat, sans-serif;
+            font-size: 0.8em;
+        }
+        p {
+            font-family: Montserrat, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+
+        }
+        button {
+            background-color: black;
+            color: #ece6db;
+            font-family: Montserrat, sans-serif;
+            text-transform: uppercase;
+            padding: 8px 25px;
+            border-radius: 50vh;
+            border: none;
+            transition: background-color 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #505050;
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    #menu {
+        top: -3vh;
+        right: 3vh;
+    }
+    #container {
+        margin: 5vh;
+
+        .texts {
+            margin-bottom: 5vh;
+            h2 {
+                max-width: 75%;
+            }
+        }
+    }
+}
