@@ -1,1 +1,3 @@
-# webb-exam1
+# test exam task
+
+Recreating a webpage based on image file.
